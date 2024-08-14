@@ -10,7 +10,6 @@ import java.io.Reader;
 
 //Этот класс представляет собой контроллер, который управляет запросами к сервису постов.
 // Он обрабатывает HTTP-запросы, взаимодействует с сервисным слоем для выполнения операций с постами
-@Controller
 // и возвращает результаты клиенту в формате JSON.
 public class PostController {
     public static final String APPLICATION_JSON = "application/json";
