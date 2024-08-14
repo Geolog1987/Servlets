@@ -1,8 +1,10 @@
 package ru.netology.servlet;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ru.netology.controller.PostController;
 import ru.netology.repository.PostRepository;
 import ru.netology.service.PostService;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,11 +16,8 @@ public class MainServlet extends HttpServlet {
 
     @Override
     public void init() {//этот метод вызывается только в том случае, если сервлет впервые загружается в оперативную память
-        final var repository = new PostRepository();
-        final var service = new PostService(repository);
-        controller = new PostController(service);//Объект контроллера не создается напрямую, потому что он зависит от сервиса,
-        // который в свою очередь зависит от репозитория.
-        // Это позволяет следовать принципам инверсии зависимостей и делает код более гибким и тестируемым.
+        final var context = new AnnotationConfigApplicationContext("ru.netology");
+        controller = context.getBean(PostController.class);
     }
 
     @Override

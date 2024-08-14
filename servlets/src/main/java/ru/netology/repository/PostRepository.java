@@ -1,5 +1,6 @@
 package ru.netology.repository;
 
+import org.springframework.stereotype.Repository;
 import ru.netology.model.Post;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 // Stub
 // Класс PostRepository предназначен для управления объектами типа Post.
+@Repository
 public class PostRepository {
     private final ConcurrentMap<Long, Post> posts = new ConcurrentHashMap<>();
     private final AtomicLong idCounter = new AtomicLong();//создание уникального индефикатора

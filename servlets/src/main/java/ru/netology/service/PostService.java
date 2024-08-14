@@ -1,5 +1,6 @@
 package ru.netology.service;
 
+import org.springframework.stereotype.Service;
 import ru.netology.exception.NotFoundException;
 import ru.netology.model.Post;
 import ru.netology.repository.PostRepository;
@@ -7,6 +8,7 @@ import java.util.List;
 
 // Класс PostService предназначен для управления постами в системе.
 // Он взаимодействует с репозиторием для выполнения операций CRUD (создание, чтение, обновление, удаление).
+@Service
 public class PostService {
     // Переменная, хранящая репозиторий постов
     private final PostRepository repository;
