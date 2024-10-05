@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 // Stub
 // Класс PostRepository предназначен для управления объектами типа Post.
-@Repository
+
 public class PostRepository {
     private final ConcurrentMap<Long, Post> posts = new ConcurrentHashMap<>();
     private final AtomicLong idCounter = new AtomicLong();//создание уникального индефикатора
